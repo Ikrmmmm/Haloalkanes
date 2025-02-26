@@ -9,21 +9,21 @@
 <body>
     <div class="game-container">
         <h1>Haloalkane Nucleophilic Substitution Reaction Quiz</h1>
+
+        <!-- Name input and start button -->
+        <div id="start-screen">
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" placeholder="Your Name">
+            <button id="start-btn">Start Quiz</button>
+        </div>
+
+        <!-- Quiz questions and answers will appear here -->
+        <div id="quiz-screen" style="display: none;">
+            <div id="question-container">
+                <p id="question-text">Loading question...</p>
+                <div id="options"></div>
+            </div>
+
+            <div id="score-container">
+                <p id="score">Score: 0</p>
         
-        <div id="question-container">
-            <p id="question-text">Loading question...</p>
-            <div id="options"></div>
-            <button id="next-btn" style="display: none;">Next Question</button>
-        </div>
-
-        <div id="score-container">
-            <p id="score">Score: 0</p>
-            <p id="timer">Time left: 10s</p>
-        </div>
-
-        <div id="feedback" style="display: none;"></div>
-    </div>
-
-    <script src="game.js"></script>
-</body>
-</html>
