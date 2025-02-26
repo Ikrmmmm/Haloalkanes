@@ -97,7 +97,7 @@ function showQuestion() {
     document.getElementById('question-text').innerText = question.questionText;
     
     const optionsDiv = document.getElementById('options');
-    optionsDiv.innerHTML = ''; 
+    optionsDiv.innerHTML = ''; // Clear previous options
     
     question.options.forEach(option => {
         const button = document.createElement('button');
@@ -144,5 +144,5 @@ function showFinalScore() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    showQuestion();
+    showQuestion(); // Start the first question
 });
