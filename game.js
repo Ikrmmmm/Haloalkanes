@@ -78,8 +78,20 @@ const questions = [
 
 let currentQuestion = 0;
 let score = 0;
-let timer = 10;
+let timer = 20;
 let interval;
+let playerName = '';
+
+document.getElementById('start-btn').addEventListener('click', () => {
+    playerName = document.getElementById('name').value.trim();
+    if (playerName !== '') {
+        document.getElementById('start-screen').style.display = 'none';
+        document.getElementById('quiz-screen').style.display = 'block';
+        showQuestion();
+    } else {
+        alert('Please enter your name to start the quiz!');
+    }
+});
 
 function startTimer() {
     interval = setInterval(function () {
@@ -95,10 +107,10 @@ function startTimer() {
 function showQuestion() {
     const question = questions[currentQuestion];
     document.getElementById('question-text').innerText = question.questionText;
-    
+
     const optionsDiv = document.getElementById('options');
     optionsDiv.innerHTML = ''; // Clear previous options
-    
+
     question.options.forEach(option => {
         const button = document.createElement('button');
         button.innerText = option;
@@ -112,10 +124,10 @@ function showQuestion() {
 
 function checkAnswer(answer) {
     clearInterval(interval);
-    
+
     const question = questions[currentQuestion];
     const feedbackDiv = document.getElementById('feedback');
-    
+
     if (answer === question.correctAnswer) {
         score++;
         feedbackDiv.innerText = "Correct! Well done.";
@@ -130,7 +142,7 @@ function checkAnswer(answer) {
 
 document.getElementById('next-btn').addEventListener('click', () => {
     currentQuestion++;
-    timer = 10;
+    timer = 20;
     if (currentQuestion < questions.length) {
         showQuestion();
         document.getElementById('feedback').style.display = "none";
@@ -140,9 +152,6 @@ document.getElementById('next-btn').addEventListener('click', () => {
 });
 
 function showFinalScore() {
-    alert(`Game Over! Your final score is: ${score}`);
+    alert(`${playerName}, Game Over! Your final score is: ${score}`);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    showQuestion(); // Start the first question
-});
