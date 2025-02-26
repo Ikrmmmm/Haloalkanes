@@ -78,6 +78,7 @@ const questions = [
 
 let currentQuestion = 0;
 let score = 0;
+let wrongAnswers = 0;
 let timer = 20;
 let interval;
 let playerName = '';
@@ -132,10 +133,12 @@ function checkAnswer(answer) {
         score++;
         feedbackDiv.innerText = "Correct! Well done.";
     } else {
+        wrongAnswers++;
         feedbackDiv.innerText = `Wrong! The correct answer was ${question.correctAnswer}.`;
     }
 
     document.getElementById('score').innerText = `Score: ${score}`;
+    document.getElementById('wrong').innerText = `Wrong answers: ${wrongAnswers}`;
     feedbackDiv.style.display = "block";
     document.getElementById('next-btn').style.display = "block";
 }
@@ -152,5 +155,23 @@ document.getElementById('next-btn').addEventListener('click', () => {
 });
 
 function showFinalScore() {
+    const ranking = JSON.parse(localStorage.getItem('ranking')) || [];
+    ranking.push({ name: playerName, score: score });
+    ranking.sort((a, b) => b.score - a.score);  // Sort by score in descending order
+    localStorage.setItem('ranking', JSON.stringify(ranking));
+
     alert(`${playerName}, Game Over! Your final score is: ${score}`);
+    updateRanking();
+}
+
+function updateRanking() {
+    const rankingList = document.getElementById('ranking-list');
+    rankingList.innerHTML = '';  // Clear previous ranking
+
+    const ranking = JSON.parse(localStorage.getItem('ranking')) || [];
+    ranking.slice(0, 5).forEach((entry, index) => {
+        const listItem = document.createElement('li');
+        listItem.innerText = `${index + 1}. ${entry.name} - Score: ${entry.score}`;
+        rankingList.appendChild(listItem);
+    });
 }
