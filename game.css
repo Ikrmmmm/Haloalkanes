@@ -101,6 +101,24 @@ button:hover {
     padding: 10px;
 }
 
+/* Ranking */
+#ranking {
+    margin-top: 40px;
+    font-size: 18px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#ranking-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#ranking-list li {
+    font-size: 16px;
+}
+
 /* Responsive Design for mobile and tablets */
 @media (max-width: 600px) {
     h1 {
