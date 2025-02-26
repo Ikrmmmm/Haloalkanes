@@ -1,30 +1,31 @@
-/* Set a chemistry-themed background */
+/* Apply background image for chemistry theme */
 body {
     font-family: Arial, sans-serif;
-    background: url('https://i.imgur.com/Tz6Rztf.jpg') no-repeat center center fixed;
+    background: url('https://images.unsplash.com/photo-1504674900247-2eec10b9d5f5') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    color: white; /* Text will be white to contrast the background */
+    color: white;
 }
 
-/* Styling for the main container */
+/* Game container */
 .game-container {
-    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    width: 350px;
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Max width for desktop */
     text-align: center;
 }
 
 /* Title Styling */
 h1 {
     font-size: 24px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 /* Question text */
@@ -34,7 +35,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Style for the option buttons */
+/* Styling for option buttons */
 button {
     margin-top: 10px;
     padding: 12px;
@@ -52,7 +53,7 @@ button:hover {
     color: white;
 }
 
-/* Timer and Score Section */
+/* Score and timer container */
 #score-container {
     margin-top: 20px;
     font-size: 18px;
@@ -60,7 +61,7 @@ button:hover {
     justify-content: space-between;
 }
 
-/* Feedback text */
+/* Feedback */
 #feedback {
     margin-top: 20px;
     font-size: 18px;
@@ -70,10 +71,31 @@ button:hover {
     color: red;
 }
 
-/* Style for the "Next Question" button */
+/* "Next Question" button */
 #next-btn {
     background-color: #4CAF50;
     color: white;
     border: none;
     padding: 10px;
+}
+
+/* Responsive Design for mobile and tablets */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    #question-text {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #score-container {
+        flex-direction: column;
+        font-size: 16px;
+    }
 }
