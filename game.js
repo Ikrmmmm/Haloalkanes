@@ -1,4 +1,3 @@
-// List of questions with multiple choice options
 const questions = [
     {
         questionText: "What is the primary factor in an SN1 reaction?",
@@ -20,35 +19,32 @@ const questions = [
         options: ["They have a slow rate-determining step", "They involve a transition state", "They occur with inversion of configuration", "They are unaffected by the solvent"],
         correctAnswer: "They occur with inversion of configuration"
     },
-    // Add more questions (total of 15)
+    // Add more questions here...
 ];
 
-// Game state variables
 let currentQuestion = 0;
 let score = 0;
-let timer = 10; // 10 seconds per question
+let timer = 10;
 let interval;
 let selectedAnswer = "";
 
-// Timer logic
 function startTimer() {
     interval = setInterval(function () {
         timer--;
         document.getElementById('timer').innerText = `Time left: ${timer}s`;
         if (timer <= 0) {
             clearInterval(interval);
-            nextQuestion(); // Automatically go to next question if time is up
+            nextQuestion();
         }
     }, 1000);
 }
 
-// Show the next question
 function showQuestion() {
     const question = questions[currentQuestion];
     document.getElementById('question-text').innerText = question.questionText;
     
     const optionsDiv = document.getElementById('options');
-    optionsDiv.innerHTML = ''; // Clear previous options
+    optionsDiv.innerHTML = ''; 
     
     question.options.forEach(option => {
         const button = document.createElement('button');
@@ -61,7 +57,6 @@ function showQuestion() {
     startTimer();
 }
 
-// Check the selected answer and give feedback
 function checkAnswer(answer) {
     clearInterval(interval);
     selectedAnswer = answer;
@@ -81,7 +76,6 @@ function checkAnswer(answer) {
     document.getElementById('next-btn').style.display = "block";
 }
 
-// Move to the next question
 document.getElementById('next-btn').addEventListener('click', () => {
     currentQuestion++;
     timer = 10;
@@ -93,10 +87,10 @@ document.getElementById('next-btn').addEventListener('click', () => {
     }
 });
 
-// Show final score after all questions
 function showFinalScore() {
     alert(`Game Over! Your final score is: ${score}`);
 }
 
-// Start the game
-showQuestion();
+document.addEventListener('DOMContentLoaded', function() {
+    showQuestion();
+});
