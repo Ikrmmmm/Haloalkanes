@@ -19,14 +19,67 @@ const questions = [
         options: ["They have a slow rate-determining step", "They involve a transition state", "They occur with inversion of configuration", "They are unaffected by the solvent"],
         correctAnswer: "They occur with inversion of configuration"
     },
-    // Add more questions here...
+    {
+        questionText: "What type of solvent favors SN1 reactions?",
+        options: ["Polar aprotic", "Polar protic", "Non-polar", "None"],
+        correctAnswer: "Polar protic"
+    },
+    {
+        questionText: "Which of these is a characteristic of SN2 reactions?",
+        options: ["The reaction is bimolecular", "The rate is independent of the nucleophile", "The reaction is unimolecular", "Inversion of configuration is not observed"],
+        correctAnswer: "The reaction is bimolecular"
+    },
+    {
+        questionText: "Which type of carbocation is most stable in an SN1 reaction?",
+        options: ["Primary", "Secondary", "Tertiary", "Methyl"],
+        correctAnswer: "Tertiary"
+    },
+    {
+        questionText: "Which of the following is a poor leaving group?",
+        options: ["Cl-", "Br-", "I-", "OH-"],
+        correctAnswer: "OH-"
+    },
+    {
+        questionText: "In SN2 reactions, what happens to the configuration of the substrate?",
+        options: ["Retention", "Inversion", "Racemization", "No change"],
+        correctAnswer: "Inversion"
+    },
+    {
+        questionText: "What does a polar aprotic solvent do in an SN2 reaction?",
+        options: ["Stabilizes the nucleophile", "Decreases nucleophile reactivity", "Increases nucleophile reactivity", "Prevents the reaction from occurring"],
+        correctAnswer: "Increases nucleophile reactivity"
+    },
+    {
+        questionText: "What happens in the transition state of an SN2 reaction?",
+        options: ["The nucleophile and leaving group are both partially bonded", "The nucleophile is completely bonded", "The leaving group is completely gone", "There is no transition state"],
+        correctAnswer: "The nucleophile and leaving group are both partially bonded"
+    },
+    {
+        questionText: "Which of the following is true for an SN1 reaction?",
+        options: ["A carbocation intermediate is formed", "There is no intermediate", "The reaction occurs in a single step", "It is faster than SN2"],
+        correctAnswer: "A carbocation intermediate is formed"
+    },
+    {
+        questionText: "Which of the following does NOT affect the rate of an SN1 reaction?",
+        options: ["Nucleophile concentration", "Solvent polarity", "Leaving group ability", "Carbocation stability"],
+        correctAnswer: "Nucleophile concentration"
+    },
+    {
+        questionText: "Which of the following best describes an SN2 reaction?",
+        options: ["Bimolecular", "Unimolecular", "Involves a carbocation", "Does not require a leaving group"],
+        correctAnswer: "Bimolecular"
+    },
+    {
+        questionText: "What kind of substrate is most likely to undergo an SN1 reaction?",
+        options: ["Methyl", "Primary", "Secondary", "Tertiary"],
+        correctAnswer: "Tertiary"
+    }
 ];
 
 let currentQuestion = 0;
 let score = 0;
 let timer = 10;
 let interval;
-let selectedAnswer = "";
 
 function startTimer() {
     interval = setInterval(function () {
@@ -59,7 +112,6 @@ function showQuestion() {
 
 function checkAnswer(answer) {
     clearInterval(interval);
-    selectedAnswer = answer;
     
     const question = questions[currentQuestion];
     const feedbackDiv = document.getElementById('feedback');
