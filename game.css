@@ -1,7 +1,7 @@
 /* Basic styling */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #4CAF50, #2196F3); /* Green to blue gradient */
+    background-color: #2196F3; /* Blue background */
     color: #333; /* Dark color for text */
     display: flex;
     justify-content: center;
@@ -11,7 +11,7 @@ body {
 }
 
 .game-container {
-    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    background-color: #2E8B57; /* Dark Green background for the quiz box */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
