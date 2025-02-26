@@ -154,4 +154,3 @@ document.getElementById('next-btn').addEventListener('click', () => {
 function showFinalScore() {
     alert(`${playerName}, Game Over! Your final score is: ${score}`);
 }
-
