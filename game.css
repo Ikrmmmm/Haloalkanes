@@ -1,0 +1,79 @@
+/* Set a chemistry-themed background */
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://i.imgur.com/Tz6Rztf.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white; /* Text will be white to contrast the background */
+}
+
+/* Styling for the main container */
+.game-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+}
+
+/* Title Styling */
+h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Question text */
+#question-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Style for the input/select elements */
+select, button {
+    margin-top: 10px;
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #5B8C5A;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Styling for the submit button */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Styling for feedback text */
+#feedback {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Score and Timer Section */
+#score-container {
+    margin-top: 20px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Timer text style */
+#timer {
+    color: red;
+}
