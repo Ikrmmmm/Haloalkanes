@@ -3,38 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haloalkane Substitution Reaction Game</title>
+    <title>Haloalkane Substitution Reaction Quiz</title>
     <link rel="stylesheet" href="game.css">
 </head>
 <body>
     <div class="game-container">
-        <h1>Haloalkane Nucleophilic Substitution Reaction Game</h1>
-        <p id="intro">Test your knowledge on nucleophilic substitution reactions!</p>
-
+        <h1>Haloalkane Nucleophilic Substitution Reaction Quiz</h1>
+        
         <div id="question-container">
             <p id="question-text">Question goes here...</p>
-
-            <label for="reaction-type">Choose reaction type:</label>
-            <select id="reaction-type">
-                <option value="SN1">SN1</option>
-                <option value="SN2">SN2</option>
-            </select>
-
-            <label for="nucleophile">Choose nucleophile:</label>
-            <select id="nucleophile">
-                <option value="OH-">OH-</option>
-                <option value="CN-">CN-</option>
-                <option value="CH3O-">CH3O-</option>
-            </select>
-
-            <button id="submit-btn">Submit</button>
+            
+            <!-- Multiple choice options will be dynamically added here -->
+            <div id="options"></div>
+            
+            <button id="next-btn" style="display: none;">Next Question</button>
         </div>
 
-        <div id="feedback"></div>
         <div id="score-container">
             <p id="score">Score: 0</p>
-            <p id="timer">Time left: 60s</p>
+            <p id="timer">Time left: 10s</p>
         </div>
+        
+        <div id="feedback" style="display: none;"></div>
     </div>
 
     <script src="game.js"></script>
